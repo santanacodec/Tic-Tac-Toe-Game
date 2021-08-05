@@ -7,4 +7,15 @@ body {
 .btn {
     margin-top: 1px;
     margin-bottom: 1px;
+    height:50px;
+    width: 50px;
+    color: white;
+}
+
+#turnX {
+    width:100px;
+}
+
+#turnO {
+    width:100px;
 }
