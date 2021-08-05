@@ -1,3 +1,9 @@
+body {
+    background-color:black;
+    color:white;
+    font-family: 'Fredericka the Great', cursive;
+}
+
 .btn {
     margin-top: 1px;
     margin-bottom: 1px;
