@@ -9,5 +9,5 @@ document.getElementById('turnX').addEventListener('click', () => {
     computerTurn= "X";
     document.getElementById('turnX').remove('btn-primary');
     document.getElementById('turnO').add('btn-primary');
-    
-})
+});
+
