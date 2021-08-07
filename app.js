@@ -22,5 +22,15 @@ function computersTurn() {
     var turnTaken = false;
     while(turnTaken === false && count!==5) {
         var compsMove = (Math.random()*10).toFixed();
+        var move= document.querySelector("#" + compsMove).text();
+        if(move === "#") {
+            document.querySelector("#" + compsMove).text(computerTurn);
+            taken = true;
+            turns[compsMove] = computerTurn;
+        }
     }
+}
+
+function playersTurn() {
+
 }
