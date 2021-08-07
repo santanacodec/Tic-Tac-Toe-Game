@@ -36,5 +36,6 @@ function playersTurn(turn, id) {
     if(spotTaken === "#") {
         count++;
         turns[id] = turn;
+        document.querySelector("#" + id).text(turn);
     }
 }
