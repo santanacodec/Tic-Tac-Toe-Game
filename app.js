@@ -18,3 +18,9 @@ document.getElementById('turnO').addEventListener('click', () => {
     document.getElementById('turnX').classList.add('btn-primary');
 });
 
+function computersTurn() {
+    var turnTaken = false;
+    while(turnTaken === false && count!==5) {
+        
+    }
+}
