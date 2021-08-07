@@ -39,3 +39,10 @@ function playersTurn(turn, id) {
         document.querySelector("#" + id).text(turn);
     }
 }
+
+function reset() {
+    turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
+    count = 0;
+    document.getElementsByClassName("tic").text("#");
+    computerOn = false;
+}
