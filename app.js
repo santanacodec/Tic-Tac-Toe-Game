@@ -11,3 +11,10 @@ document.getElementById('turnX').addEventListener('click', () => {
     document.getElementById('turnO').add('btn-primary');
 });
 
+document.getElementById('turnO').addEventListener('click', () => {
+    turn = "X";
+    computerTurn= "O";
+    document.getElementById('turnO').remove('btn-primary');
+    document.getElementById('turnX').add('btn-primary');
+});
+
