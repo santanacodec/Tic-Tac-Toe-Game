@@ -31,6 +31,10 @@ function computersTurn() {
     }
 }
 
-function playersTurn() {
-
+function playersTurn(turn, id) {
+    let spotTaken = document.querySelector("#" + id).text();
+    if(spotTaken === "#") {
+        count++;
+        turns[id] = turn;
+    }
 }
