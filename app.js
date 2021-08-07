@@ -1,5 +1,5 @@
 var turn="X";
-var turns=["#", "#", "#", "#", "#", "#", "#", "#", "#",];
+var turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
 var computerTurn="0";
 var computerOn = false;
 var count=0;
@@ -21,6 +21,6 @@ document.getElementById('turnO').addEventListener('click', () => {
 function computersTurn() {
     var turnTaken = false;
     while(turnTaken === false && count!==5) {
-        
+        var compsMove = (Math.random()*10).toFixed();
     }
 }
