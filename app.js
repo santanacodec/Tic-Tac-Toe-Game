@@ -9,6 +9,7 @@ document.getElementById('turnX').addEventListener('click', () => {
     computerTurn= "X";
     document.getElementById('turnX').classList.remove('btn-primary');
     document.getElementById('turnO').classList.add('btn-primary');
+    reset();
 });
 
 document.getElementById('turnO').addEventListener('click', () => {
@@ -16,6 +17,7 @@ document.getElementById('turnO').addEventListener('click', () => {
     computerTurn= "O";
     document.getElementById('turnO').classList.remove('btn-primary');
     document.getElementById('turnX').classList.add('btn-primary');
+    reset();
 });
 
 function computersTurn() {
