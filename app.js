@@ -48,3 +48,7 @@ function reset() {
     document.getElementsByClassName("tic").text("#");
     computerOn = false;
 }
+
+function winProcess (turnArr, currentTurn) {
+
+}
