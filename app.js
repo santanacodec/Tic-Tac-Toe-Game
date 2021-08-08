@@ -42,6 +42,11 @@ function playersTurn(turn, id) {
     }
 }
 
+document.getElementsByClassName("tic").addEventListener('click', () => {
+    let slot = this.Attr("id");
+    playersTurn(turn, slot);
+});
+
 function reset() {
     turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
     count = 0;
