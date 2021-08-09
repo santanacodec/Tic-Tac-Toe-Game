@@ -39,6 +39,11 @@ function playersTurn(turn, id) {
         count++;
         turns[id] = turn;
         document.querySelector("#" + id).text(turn);
+        winner(turns, turn);
+        if(computerOn === false) {
+            computersTurn();
+            winner(turns, computerTurn);
+        }
     }
 }
 
