@@ -68,6 +68,24 @@ function winner (turnArr, currentTurn) {
         reset();
         alert("Player " + currentTurn + " wins! (0, 3, and 6 spots)");
     } else if (turnArr[0] === currentTurn && turnArr[4] === currentTurn && turnArr[8] === currentTurn) {
-
+        computerOn = true;
+        reset();
+        alert("Player " + currentTurn + " wins! (0, 4, and 8 spots)");
+    } else if (turnArr[1] === currentTurn && turnArr[4] === currentTurn && turnArr[7] === currentTurn) {
+        computerOn = true;
+        reset();
+        alert("Plater " + currentTurn + " wins! (1, 4, and 7 spots)");
+    } else if (turnArr[2] === currentTurn && turnArr[5] === currentTurn && turnArr[8] === currentTurn) {
+        computerOn = true;
+        reset();
+        alert("Player " + currentTurn + " wins (2, 5, and 8 spots)");
+    } else if (turnArr[3] === currentTurn && turnArr[4] === currentTurn && turnArr[5] === currentTurn) {
+        computerOn = true;
+        reset();
+        alert("Player " + currentTurn + " wins (3, 4, and 5 spots)");
+    } else if (turnArr[6] === currentTurn && turnArr[7] === currentTurn && turnArr[8] === currentTurn) {
+        computerOn = true;
+        reset();
+        alert("Player " + currentTurn + " wins (6, 7, and 8 spots)");
     }
 }
