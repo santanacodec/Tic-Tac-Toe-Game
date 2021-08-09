@@ -55,5 +55,17 @@ function reset() {
 }
 
 function winProcess (turnArr, currentTurn) {
-
+    if (turnArr[0] === currentTurn && turnArr[1] === currentTurn && turnArr[2] === currentTurn) {
+        computerOn = true;
+        reset();
+        alert("Player " + currentTurn + " wins! (0, 1, and 2 spots)");
+    } else if (turnArr[2] === currentTurn && turnArr[4] === currentTurn && turnArr[6] === currentTurn) {
+        computerOn = true;
+        reset();
+        alert("Player " + currentTurn + " wins! (2, 4, and 6 spoys)");
+    } else if (turnArr[0] === currentTurn && turnArr[3] === currentTurn && turnArr[6] === currentTurn) {
+        computerOn = true;
+        reset();
+        alert("Player " + currentTurn + " wins! (0, 3, and 6 spots)");
+    }
 }
