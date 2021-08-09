@@ -47,17 +47,7 @@ function playersTurn(turn, id) {
     }
 }
 
-document.getElementsByClassName("tic").addEventListener('click', () => {
-    let slot = this.Attr("id");
-    playersTurn(turn, slot);
-});
 
-function reset() {
-    turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
-    count = 0;
-    document.getElementsByClassName("tic").text("#");
-    computerOn = false;
-}
 
 function winner (turnArr, currentTurn) {
     if (turnArr[0] === currentTurn && turnArr[1] === currentTurn && turnArr[2] === currentTurn) {
@@ -93,4 +83,16 @@ function winner (turnArr, currentTurn) {
         reset();
         alert("Player " + currentTurn + " wins (6, 7, and 8 spots)");
     }
+}
+
+document.querySelector(".tic").click(function() {
+    let slot = document.querySelector(this).Attr("id");
+    playersTurn(turn, slot);
+});
+
+function reset() {
+    turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
+    count = 0;
+    document.getElementsByClassName("tic").text("#");
+    computerOn = false;
 }
