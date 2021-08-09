@@ -54,7 +54,7 @@ function reset() {
     computerOn = false;
 }
 
-function winProcess (turnArr, currentTurn) {
+function winner (turnArr, currentTurn) {
     if (turnArr[0] === currentTurn && turnArr[1] === currentTurn && turnArr[2] === currentTurn) {
         computerOn = true;
         reset();
@@ -67,5 +67,7 @@ function winProcess (turnArr, currentTurn) {
         computerOn = true;
         reset();
         alert("Player " + currentTurn + " wins! (0, 3, and 6 spots)");
+    } else if (turnArr[0] === currentTurn && turnArr[4] === currentTurn && turnArr[8] === currentTurn) {
+
     }
 }
