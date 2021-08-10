@@ -27,7 +27,7 @@ function computersTurn() {
     var turnTaken = false;
     while(turnTaken === false && count!==5) {
         var compsMove = (Math.random()*10).toFixed();
-        var move= document.querySelector("#" + compsMove).text();
+        var move= document.innerHTML("#" + compsMove).text();
         if(move === "#") {
             document.querySelector("#" + compsMove).text(computerTurn);
             taken = true;
@@ -49,8 +49,6 @@ function playersTurn(turn, id) {
         }
     }
 }
-
-
 
 function winner (turnArr, currentTurn) {
     if (turnArr[0] === currentTurn && turnArr[1] === currentTurn && turnArr[2] === currentTurn) {
@@ -89,15 +87,13 @@ function winner (turnArr, currentTurn) {
 }
 
 tick.addEventListener('click', () =>{
-    var slot = this.attr("id");
+    var slot = document.querySelector("id");
     playersTurn(turn, slot);
 });
-
-
 
 function reset() {
     turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
     count = 0;
-    tick.text("#");
+    tick.innerHTML="#";
     computerOn = false;
 }
