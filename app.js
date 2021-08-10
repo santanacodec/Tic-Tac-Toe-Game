@@ -1,22 +1,25 @@
+const turnX = document.getElementById('turnX');
+const turnO = document.getElementById('turnO');
+const tick = document.querySelector('.tic');
 var turn="X";
 var turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
 var computerTurn="0";
 var computerOn = false;
 var count=0;
 
-document.getElementById('turnX').addEventListener('click', () => {
+turnX.addEventListener('click', () => {
     turn = "O";
     computerTurn= "X";
-    document.getElementById('turnX').classList.remove('btn-primary');
-    document.getElementById('turnO').classList.add('btn-primary');
+    turnX.classList.remove('btn-primary');
+    turnO.classList.add('btn-primary');
     reset();
 });
 
-document.getElementById('turnO').addEventListener('click', () => {
+turnO.addEventListener('click', () => {
     turn = "X";
     computerTurn= "O";
-    document.getElementById('turnO').classList.remove('btn-primary');
-    document.getElementById('turnX').classList.add('btn-primary');
+    turnO.classList.remove('btn-primary');
+    turnX.classList.add('btn-primary');
     reset();
 });
 
@@ -34,7 +37,7 @@ function computersTurn() {
 }
 
 function playersTurn(turn, id) {
-    let spotTaken = document.querySelector("#" + id).text();
+    var spotTaken = document.querySelector("#" + id).text();
     if(spotTaken === "#") {
         count++;
         turns[id] = turn;
@@ -85,14 +88,16 @@ function winner (turnArr, currentTurn) {
     }
 }
 
-document.querySelector(".tic").click(function() {
-    let slot = document.querySelector(this).Attr("id");
+tick.addEventListener('click', () =>{
+    var slot = this.attr("id");
     playersTurn(turn, slot);
 });
+
+
 
 function reset() {
     turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
     count = 0;
-    document.getElementsByClassName("tic").text("#");
+    tick.text("#");
     computerOn = false;
 }
