@@ -1,7 +1,6 @@
 const turnX = document.getElementById('turnX');
 const turnO = document.getElementById('turnO');
 const tick = document.querySelector('.tic');
-
 var hash = "#";
 var turn="X";
 var turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
@@ -88,9 +87,20 @@ function winner (turnArr, currentTurn) {
     }
 }
 
-tick.addEventListener('click', () =>{
-    clickedID(this);
-});
+/** 
+tick.forEach(e => {
+    e.addEventListener('click', () => {
+      var slot = e.id;
+      console.log(slot);
+    });
+  })
+*/
+
+document.body.addEventListener('click', function(e){
+    if(e.target.classList.contains("tic")){
+        console.log(e.target.id);
+    }
+}); 
 
 function reset() {
     turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
@@ -98,17 +108,3 @@ function reset() {
     tick.innerHTML="#";
     computerOn = false;
 }
-
-function clickedID(clicked_id) {
-    document.getElementById([]);
-}
-
-document.getElementById('0').onclick = clickedID(this.id);
-document.getElementById('1').onclick = clickedID(this.id);
-document.getElementById('2').onclick = clickedID(this.id);
-document.getElementById('3').onclick = clickedID(this.id);
-document.getElementById('4').onclick = clickedID(this.id);
-document.getElementById('5').onclick = clickedID(this.id);
-document.getElementById('6').onclick = clickedID(this.id);
-document.getElementById('7').onclick = clickedID(this.id);
-document.getElementById('8').onclick = clickedID(this.id);
