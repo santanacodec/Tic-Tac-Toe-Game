@@ -38,17 +38,19 @@ function computersTurn() {
 }
 
 function playersTurn(turn, id) {
-    var spotTaken = (hash+document.querySelector(id)).innerHTML;
-    if(spotTaken === "#") {
-        count++;
-        turns[id] = turn;
-        (hash+document.querySelector(id)).innerHTML = turn;
-        winner(turns, turn);
-        if(computerOn === false) {
-            computersTurn();
-            winner(turns, computerTurn);
-        }
-    }
+    let spotTaken = (hash + id);
+    console.log("test " + spotTaken + " test");
+    document.getElementById("test").innerText = spotTaken;
+    // if(spotTaken === "#") {
+    //     count++;
+    //     turns[id] = turn;
+    //     (hash+document.querySelector(id)).innerHTML = turn;
+    //     winner(turns, turn);
+    //     if(computerOn === false) {
+    //         computersTurn();
+    //         winner(turns, computerTurn);
+    //     }
+    // }
 }
 
 function winner (turnArr, currentTurn) {
@@ -98,7 +100,9 @@ tick.forEach(e => {
 
 document.body.addEventListener('click', function(e){
     if(e.target.classList.contains("tic")){
-        console.log(e.target.id);
+        let slot = e.target.id;
+        console.log(slot);
+        playersTurn(turn, slot);
     }
 }); 
 
