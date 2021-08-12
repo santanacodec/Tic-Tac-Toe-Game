@@ -28,12 +28,12 @@ function computersTurn() {
     var turnTaken = false;
     while(turnTaken === false && count!==5) {
         var compsMove = (Math.random()*10).toFixed();
-        var move= document.innerHTML("#" + compsMove).text();
-        if(move === "#") {
-            document.querySelector("#" + compsMove).text(computerTurn);
-            taken = true;
-            turns[compsMove] = computerTurn;
-        }
+        var move= document.innerHTML("#" + compsMove);
+        // if(move === "#") {
+        //     document.querySelector("#" + compsMove).text(computerTurn);
+        //     taken = true;
+        //     turns[compsMove] = computerTurn;
+        // }
     }
 }
 
@@ -43,14 +43,14 @@ function playersTurn(turn, id) {
     document.getElementById("test").innerHTML = spotTaken.textContent;
     if(spotTaken.textContent === "#") {
         console.log("HELLO");
-    //     count++;
-    //     turns[id] = turn;
-    //     (hash+id).innerHTML = turn;
-    //     winner(turns, turn);
-    //     if(computerOn === false) {
-    //         computersTurn();
-    //         winner(turns, computerTurn);
-    //     }
+        count++;
+        turns[id] = turn;
+        spotTaken.textContent = turn;
+        winner(turns, turn);
+        if(computerOn === false) {
+            computersTurn();
+            winner(turns, computerTurn);
+        }
     }
 }
 
