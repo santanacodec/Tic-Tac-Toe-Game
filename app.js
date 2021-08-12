@@ -38,19 +38,20 @@ function computersTurn() {
 }
 
 function playersTurn(turn, id) {
-    let spotTaken = (hash + id);
-    console.log("test " + spotTaken + " test");
-    document.getElementById("test").innerText = spotTaken;
-    // if(spotTaken === "#") {
+    let spotTaken = document.getElementById(id);
+    console.log("test " + id + " test");
+    document.getElementById("test").innerHTML = spotTaken.textContent;
+    if(spotTaken.textContent === "#") {
+        console.log("HELLO");
     //     count++;
     //     turns[id] = turn;
-    //     (hash+document.querySelector(id)).innerHTML = turn;
+    //     (hash+id).innerHTML = turn;
     //     winner(turns, turn);
     //     if(computerOn === false) {
     //         computersTurn();
     //         winner(turns, computerTurn);
     //     }
-    // }
+    }
 }
 
 function winner (turnArr, currentTurn) {
