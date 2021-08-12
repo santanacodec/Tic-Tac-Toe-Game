@@ -27,8 +27,9 @@ turnO.addEventListener('click', () => {
 function computersTurn() {
     var turnTaken = false;
     while(turnTaken === false && count!==5) {
-        var compsMove = (Math.random()*10).toFixed();
-        var move= document.innerHTML("#" + compsMove);
+        var compsMove = (Math.random()*10).toFixed;
+        //var move= compsMove.textContent;
+        console.log("THIS " + compsMove);
         // if(move === "#") {
         //     document.querySelector("#" + compsMove).text(computerTurn);
         //     taken = true;
