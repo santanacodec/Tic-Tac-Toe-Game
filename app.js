@@ -13,7 +13,7 @@ turnX.addEventListener('click', () => {
     computerTurn= "X";
     turnX.classList.remove('btn-primary');
     turnO.classList.add('btn-primary');
-    reset();
+    //reset();
 });
 
 turnO.addEventListener('click', () => {
@@ -21,7 +21,7 @@ turnO.addEventListener('click', () => {
     computerTurn= "O";
     turnO.classList.remove('btn-primary');
     turnX.classList.add('btn-primary');
-    reset();
+    //reset();
 });
 
 function computersTurn() {
@@ -29,16 +29,15 @@ function computersTurn() {
     while(turnTaken === false && count!==5) {
         let compsMove = (Math.random()*10).toFixed();
         let move = document.getElementById(compsMove).textContent;
-        //let move = compsMove.textContent;
        
         if(move === "#") {
-            move = turn;
+            move = computerTurn;
             //document.querySelector("#" + compsMove).text(computerTurn);
             turnTaken = true;
             turns[compsMove] = computerTurn;
             console.log("THIS " + compsMove);
-            document.getElementById("test").innerHTML = move;
-        }
+            document.getElementById(compsMove).innerHTML = move;
+        } 
     }
 }
 
