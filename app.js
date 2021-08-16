@@ -13,6 +13,7 @@ turnX.addEventListener('click', () => {
     computerTurn= "X";
     turnX.classList.remove('btn-primary');
     turnO.classList.add('btn-primary');
+    reset()
 });
 
 turnO.addEventListener('click', () => {
@@ -20,14 +21,14 @@ turnO.addEventListener('click', () => {
     computerTurn= "O";
     turnO.classList.remove('btn-primary');
     turnX.classList.add('btn-primary');
+    reset()
 });
 
 function computersTurn() {
     let turnTaken = false;
     while(turnTaken === false && count!==5) {
         let compsMove = (Math.random()*8).toFixed();
-        let move = document.getElementById(compsMove).textContent;
-       
+        let move = document.getElementById(compsMove).textContent; 
         if(move === "#") {
             move = computerTurn;
             turnTaken = true;
@@ -57,36 +58,44 @@ function playersTurn(turn, id) {
 function winner (turnArr, currentTurn) {
     if (turnArr[0] === currentTurn && turnArr[1] === currentTurn && turnArr[2] === currentTurn) {
         computerOn = true;
-        reset();
+        reset();      
         alert("Player " + currentTurn + " wins! (0, 1, and 2 spots)");
+        toggle();
     } else if (turnArr[2] === currentTurn && turnArr[4] === currentTurn && turnArr[6] === currentTurn) {
         computerOn = true;
-        reset();
+        reset();       
         alert("Player " + currentTurn + " wins! (2, 4, and 6 spoys)");
+        toggle();
     } else if (turnArr[0] === currentTurn && turnArr[3] === currentTurn && turnArr[6] === currentTurn) {
         computerOn = true;
-        reset();
+        reset();       
         alert("Player " + currentTurn + " wins! (0, 3, and 6 spots)");
+        toggle();
     } else if (turnArr[0] === currentTurn && turnArr[4] === currentTurn && turnArr[8] === currentTurn) {
         computerOn = true;
-        reset();
+        reset();       
         alert("Player " + currentTurn + " wins! (0, 4, and 8 spots)");
+        toggle();
     } else if (turnArr[1] === currentTurn && turnArr[4] === currentTurn && turnArr[7] === currentTurn) {
         computerOn = true;
-        reset();
+        reset();        
         alert("Plater " + currentTurn + " wins! (1, 4, and 7 spots)");
+        toggle();
     } else if (turnArr[2] === currentTurn && turnArr[5] === currentTurn && turnArr[8] === currentTurn) {
         computerOn = true;
         reset();
         alert("Player " + currentTurn + " wins (2, 5, and 8 spots)");
+        toggle();
     } else if (turnArr[3] === currentTurn && turnArr[4] === currentTurn && turnArr[5] === currentTurn) {
         computerOn = true;
-        reset();
+        reset();        
         alert("Player " + currentTurn + " wins (3, 4, and 5 spots)");
+        toggle();
     } else if (turnArr[6] === currentTurn && turnArr[7] === currentTurn && turnArr[8] === currentTurn) {
         computerOn = true;
-        reset();
+        reset();       
         alert("Player " + currentTurn + " wins (6, 7, and 8 spots)");
+        toggle();
     }
 }
 
@@ -112,4 +121,10 @@ function reset() {
     count = 0;
     tick.innerHTML="#";
     computerOn = false;
+}
+
+function toggle() {
+    var gameApp = document.getElementById('game');
+    gameApp.style.display="none";
+    alert("REFRESH THE PAGE");
 }
