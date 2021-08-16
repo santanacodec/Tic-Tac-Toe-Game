@@ -1,12 +1,12 @@
 const turnX = document.getElementById('turnX');
 const turnO = document.getElementById('turnO');
 const tick = document.querySelector('.tic');
-var hash = "#";
-var turn="X";
-var turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
-var computerTurn="0";
-var computerOn = false;
-var count=0;
+let hash = "#";
+let turn="X";
+let turns=["#", "#", "#", "#", "#", "#", "#", "#", "#"];
+let computerTurn="0";
+let computerOn = false;
+let count=0;
 
 turnX.addEventListener('click', () => {
     turn = "O";
@@ -25,9 +25,9 @@ turnO.addEventListener('click', () => {
 });
 
 function computersTurn() {
-    var turnTaken = false;
+    let turnTaken = false;
     while(turnTaken === false && count!==5) {
-        var compsMove = (Math.random()*10).toFixed();
+        // var compsMove = (Math.random()*10).toFixed();
         //var move= compsMove.textContent;
         console.log("THIS " + compsMove);
         // if(move === "#") {
