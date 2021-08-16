@@ -27,21 +27,25 @@ turnO.addEventListener('click', () => {
 function computersTurn() {
     let turnTaken = false;
     while(turnTaken === false && count!==5) {
-        // var compsMove = (Math.random()*10).toFixed();
-        //var move= compsMove.textContent;
-        console.log("THIS " + compsMove);
-        // if(move === "#") {
-        //     document.querySelector("#" + compsMove).text(computerTurn);
-        //     taken = true;
-        //     turns[compsMove] = computerTurn;
-        // }
+        let compsMove = (Math.random()*10).toFixed();
+        let move = document.getElementById(compsMove).textContent;
+        //let move = compsMove.textContent;
+       
+        if(move === "#") {
+            move = turn;
+            //document.querySelector("#" + compsMove).text(computerTurn);
+            turnTaken = true;
+            turns[compsMove] = computerTurn;
+            console.log("THIS " + compsMove);
+            document.getElementById("test").innerHTML = move;
+        }
     }
 }
 
 function playersTurn(turn, id) {
     let spotTaken = document.getElementById(id);
     console.log("test " + id + " test");
-    document.getElementById("test").innerHTML = spotTaken.textContent;
+    //document.getElementById("test").innerHTML = spotTaken.textContent;
     if(spotTaken.textContent === "#") {
         console.log("HELLO");
         count++;
