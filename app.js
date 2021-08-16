@@ -13,7 +13,6 @@ turnX.addEventListener('click', () => {
     computerTurn= "X";
     turnX.classList.remove('btn-primary');
     turnO.classList.add('btn-primary');
-    //reset();
 });
 
 turnO.addEventListener('click', () => {
@@ -21,21 +20,19 @@ turnO.addEventListener('click', () => {
     computerTurn= "O";
     turnO.classList.remove('btn-primary');
     turnX.classList.add('btn-primary');
-    //reset();
 });
 
 function computersTurn() {
     let turnTaken = false;
     while(turnTaken === false && count!==5) {
-        let compsMove = (Math.random()*10).toFixed();
+        let compsMove = (Math.random()*8).toFixed();
         let move = document.getElementById(compsMove).textContent;
        
         if(move === "#") {
             move = computerTurn;
-            //document.querySelector("#" + compsMove).text(computerTurn);
             turnTaken = true;
             turns[compsMove] = computerTurn;
-            console.log("THIS " + compsMove);
+           //console.log("THIS " + compsMove);
             document.getElementById(compsMove).innerHTML = move;
         } 
     }
@@ -43,10 +40,9 @@ function computersTurn() {
 
 function playersTurn(turn, id) {
     let spotTaken = document.getElementById(id);
-    console.log("test " + id + " test");
-    //document.getElementById("test").innerHTML = spotTaken.textContent;
+    // console.log("test " + id + " test");
     if(spotTaken.textContent === "#") {
-        console.log("HELLO");
+        //console.log("HELLO");
         count++;
         turns[id] = turn;
         spotTaken.textContent = turn;
